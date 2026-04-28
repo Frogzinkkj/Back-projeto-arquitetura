@@ -1,0 +1,12 @@
+package com.alunos.controle.sistema.viki.repository;
+
+import com.alunos.controle.sistema.viki.entity.Professor;
+import com.alunos.controle.sistema.viki.enums.Status;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProfessorRepository extends JpaRepository<Professor,Long> {
+  Professor findByMatriculaAndEmail(String matricula,String email);
+  List<Professor> findAllByStatus(Status status);
+}
